@@ -1,0 +1,21 @@
+{{>partials/header}}
+    {{#showWelcome}}{{!  criando uma condição, ele só mostrará o conteúdo se a condição der verdadeira }}
+        opa, {{user.name}} tudo bem ? Sua idade é {{user.age}}{{! recebendo variável referenciada no arquivo de rotas }}
+    {{/showWelcome}}    
+    </hr>
+    <ul>
+        {{#products}} {{! loop para exibir os valores da lista }}
+            <li>{{title}} - {{price}}</li>
+        {{/products}}
+    </ul>   
+    </hr>
+    <ul>
+    
+        {{#elementos}}
+            <li>{{.}}</li> {{! exibindo elementos do array }}
+        {{/elementos}}
+        {{^elementos}} {{! condicional else, ou seja, se não houver elementos no array ele entra nesse caso }}
+            Não há elementos
+        {{/elementos}}
+    </ul> 
+{{>partials/footer}} 
